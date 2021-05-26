@@ -46,22 +46,28 @@ class CountdownTimer {
 
     return { days, hours, mins, secs };
   }
+
   pad(value) {
     return String(value).padStart(2, '0');
   }
+
+  updateClockface({ days, hours, mins, secs }) {
+  refs.days.textContent = `${days}`;
+  refs.hours.textContent = `${hours}`;
+  refs.mins.textContent = `${mins}`;
+  refs.secs.textContent = `${secs}`;
 }
 
-function updateClockface({ days, hours, mins, secs }) {
-refs.days.textContent = `${days}`;
-refs.hours.textContent = `${hours}`;
-refs.mins.textContent = `${mins}`;
-refs.secs.textContent = `${secs}`;
 }
 
 const newTimer = new CountdownTimer({
   selector: '#timer-1',
-  targetDate: new Date('Jul 17, 2019'),
+  targetDate: new Date('Jun 09, 2021'),
 });
+  
+
+
+
 
 
  
