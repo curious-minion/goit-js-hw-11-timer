@@ -1,14 +1,13 @@
-const refs = {
-  days: document.querySelector('[data-value="days"]'),
-  hours: document.querySelector('[data-value="hours"]'),
-  mins: document.querySelector('[data-value="mins"]'),
-  secs: document.querySelector('[data-value="secs"]'),
-};
-
 class CountdownTimer {
   constructor({ selector, targetDate }) {
     this.selector = selector;
     this.targetDate = targetDate;
+    this.refs = {
+      days: document.querySelector('[data-value="days"]'),
+  hours: document.querySelector('[data-value="hours"]'),
+  mins: document.querySelector('[data-value="mins"]'),
+  secs: document.querySelector('[data-value="secs"]'),
+    }
 
     this.start();
   }
@@ -52,10 +51,10 @@ class CountdownTimer {
   }
 
   updateClockface({ days, hours, mins, secs }) {
-  refs.days.textContent = `${days}`;
-  refs.hours.textContent = `${hours}`;
-  refs.mins.textContent = `${mins}`;
-  refs.secs.textContent = `${secs}`;
+  this.refs.days.textContent = `${days}`;
+  this.refs.hours.textContent = `${hours}`;
+  this.refs.mins.textContent = `${mins}`;
+  this.refs.secs.textContent = `${secs}`;
 }
 
 }
